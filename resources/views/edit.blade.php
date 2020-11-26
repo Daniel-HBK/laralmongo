@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<form action="{{route('name.update', $name->id)}}" method="post" name="name_edit_form">
+<form action="{{route('name.update', $name->id)}}" method="post" name="name_edit_form" style="display:flex;">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
 

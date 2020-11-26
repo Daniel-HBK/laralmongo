@@ -9,14 +9,12 @@ use Auth;
 
 class TestController extends Controller
 {
-    public function index()
-    {
+    public function index() {
           $names = Name::all();
       return view('index', compact('names'));
     }
 
     public function edit($id) {
-
           $name = Name::where('_id', $id)->first();
       return view('edit', compact('name'));
     }
@@ -27,7 +25,7 @@ class TestController extends Controller
 
     public function create(Request $request) {
         Name::create(array(
-            'name'     => $request->name,
+            'name'   => $request->name,
         ));
        return redirect(route('names.all'));
     }
@@ -36,7 +34,6 @@ class TestController extends Controller
           $name = Name::where('_id', $id)->update(array(
               'name' => $request->name,
           ));
-
        return redirect(route('names.all'));
     }
 

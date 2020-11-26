@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<form action="{{route('name.create')}}" method="post" name="name_create_form">
+<form action="{{route('name.create')}}" method="post" name="name_create_form" style="display:flex;">
+
     {{ csrf_field() }}
 
     <label>Name:</label>

@@ -9,9 +9,12 @@
 <div>
     <ul>
         @foreach($names as $name)
-        <li> {{ $name->name }}
-            | <i><a href="{{ route('name.edit', $name->id) }}">Edit</a></i>
-            | <form action="{{route('name.delete', $name->id)}}" method="post">
+        <li style="display:flex;"> {{ $name->name }}
+
+            | <i><a href="{{ route('name.edit', $name->id) }}" style="margin-left:5px;margin-right:10px;">Edit</a></i>
+
+            | <form action="{{route('name.delete', $name->id)}}" method="post" style="margin-left:5px;">
+
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <button type=submit>Delete</button>
